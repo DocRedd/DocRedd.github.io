@@ -1,0 +1,697 @@
+@font-face {
+    font-family: Monda;
+    src: url('Monda-Regular.ttf');
+}
+@font-face {
+    font-family: MondaBold;
+    src: url('Monda-Bold.ttf');
+}
+@font-face {
+    font-family: VT323;
+    src: url('VT323-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    border: 5px solid black; /* Add a 5-pixel border around the entire window */
+    background-color: #959595;
+    font-family: Monda, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.row:last-child .square {
+    margin-bottom: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.column:last-child .square {
+    margin-right: 0;
+}
+
+/* Add a CSS animation for the delayed hover effect */
+.square:hover {
+  animation-name: pulse-hover;
+}
+.square {
+    background-color: #959595;
+    margin: 0;
+    border: 1px solid #333;
+    padding: 0;
+    float: left;
+    animation: pulse 3s ease-in-out infinite;
+    transform-origin: top left;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    animation-fill-mode: forwards;
+    border-width: 1px;
+
+    /* Add a transition for the background color */
+    transition: background-color 0.3s ease-in-out;
+
+    /* Add a CSS animation for the hover effect */
+    animation: pulse 3s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+/* Define the keyframes for the pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+  }
+}
+
+/* Define the keyframes for the delayed hover animation */
+@keyframes pulse-hover {
+  0% {
+    background-color: #959595;
+  }
+  100% {
+    background-color: var(--hover-color);
+  /* Add a delay for the hover effect to disappear */
+  animation-delay: 0.1s;
+  }
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        border-width: 1px;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        border-width: 1px;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        border-width: 1px;
+    }
+}
+
+
+.row:nth-child(odd) .square:nth-child(odd) {
+    animation-delay: 0s;
+}
+
+.row:nth-child(odd) .square:nth-child(even) {
+    animation-delay: 0.5s;
+}
+
+.row:nth-child(even) .square:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.row:nth-child(even) .square:nth-child(even) {
+    animation-delay: 0s;
+}
+.square:hover {
+    background-color: #170135;
+}
+
+.square:hover:nth-child(2n) {
+    background-color: #3ED0D4;
+}
+
+.square:hover:nth-child(3n) {
+    background-color: #182B65;
+}
+
+.square:hover:nth-child(4n) {
+    background-color: #000030;
+}
+
+.square:hover:nth-child(5n) {
+    background-color: #35AC80;
+}
+
+.square:hover:nth-child(6n) {
+    background-color: #01152C;
+}
+
+.square:hover:nth-child(7n) {
+    background-color: #D74069;
+}
+
+
+/* Nav Bar Section */
+.button-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 9%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    background-color: #959595;
+    border-radius: 30px;
+    padding: 10px;
+    z-index: 9999;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+}
+.button-bar a {
+    text-decoration: none;
+    color:#182B65;
+}
+
+
+.btn {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #3ED0D4;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.btn:hover {
+    background-color: #35AC80;
+    color: #fff;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 1336px) and (max-height: 744px) {
+  .button-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+    .button-bar {
+        width: 90%;
+        border-radius: 20px;
+        padding: 5px;
+    }
+
+    .btn {
+        margin: 0 5px;
+        font-size: 16px;
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+}
+
+/* Add styles for the square and clickable link */
+/* BUTTON 1 */
+.hover-squareA {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: #959595;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  opacity: 1;
+  border: 1px solid #333;
+  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out; /* Add a transition property for the left property */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.hover-squareA:hover {
+  opacity: 1;
+  left: calc(25% - 150px); /* Decrease the left value on hover to move the square to the left */
+}
+
+.link-squareA {
+  border: 1px solid #333;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  background-color: #170135;
+  border-radius: 20px;
+  /* transition: background-color 0.5s ease-in-out; */
+}
+
+.link-squareA:hover {
+  background-color: #35AC80;
+}
+.square-containerA {
+position: absolute;
+top: 50%;
+left: 25%;
+transform: translate(-50%, -50%);
+width: 200px;
+height: 200px;
+background-color: #333;
+/* cursor: pointer; */
+}
+
+.square-linkA {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-image: url('me221.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.square-linkA a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 100%;
+    object-fit: contain;
+}
+
+.top-left-linkA {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.top-left-linkA p {
+    font-family: VT323, sans-serif;
+    color: white;
+    font-size: 24px;
+}
+.top-left-linkA a {
+    font-family: MondaBold, sans-serif;
+  text-decoration: none;
+  color:#182B65;
+}
+
+/* BUTTON 2 */
+.hover-squareB {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: #959595;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  opacity: 1;
+  border: 1px solid #333;
+  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out; /* Add a transition property for the left property */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.hover-squareB:hover {
+  opacity: 1;
+  left: calc(50% - 150px); /* Decrease the left value on hover to move the square to the left */
+}
+
+.link-squareB {
+  border: 1px solid #333;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  background-color: #170135;
+  border-radius: 20px;
+  /* transition: background-color 0.5s ease-in-out; */
+}
+
+.link-squareB:hover {
+  background-color: #35AC80;
+}
+.square-containerB {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 200px;
+height: 200px;
+background-color: #333;
+/* cursor: pointer; */
+}
+
+.square-linkB {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-image: url('contacts.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.square-linkB a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 100%;
+    object-fit: contain;
+}
+
+.top-left-linkB {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.top-left-linkB p {
+    font-family: VT323, sans-serif;
+    color: white;
+}
+.top-left-linkB a {
+    font-family: MondaBold, sans-serif;
+  text-decoration: none;
+  color:#182B65;
+}
+
+/* BUTTON 3 */
+.hover-squareC {
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: #959595;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  opacity: 1;
+  border: 1px solid #333;
+  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out; /* Add a transition property for the left property */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.hover-squareC:hover {
+  opacity: 1;
+  left: calc(75% - 150px); /* Decrease the left value on hover to move the square to the left */
+}
+
+.link-squareC {
+  border: 3px solid #333;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  background-color: #170135;
+  border-radius: 20px;
+  /* transition: background-color 0.5s ease-in-out; */
+}
+
+.link-squareC:hover {
+  background-color: #35AC80;
+}
+.square-containerC {
+position: absolute;
+top: 50%;
+left: 75%;
+transform: translate(-50%, -50%);
+width: 200px;
+height: 200px;
+background-color: #333;
+/* cursor: pointer; */
+}
+
+.square-linkC {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-image: url('Projects.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.square-linkC a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 100%;
+    object-fit: contain;
+}
+
+.top-left-linkC {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.top-left-linkC p {
+    font-family: VT323, sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.top-left-linkC a {
+  font-family: MondaBold, sans-serif;
+  text-decoration: none;
+  color:#182B65;
+}
+
+/* Social Media Buttons */
+.social-media-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #959595;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
+}
+
+.social-media-bar  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    box-shadow: 0px 3px 5px black;
+    margin-top: 20px;
+    background-color: #3ED0D4;
+}
+
+.social-media-bar img:hover {
+    background-color: #35AC80;
+    box-shadow: 0px 3px 5px #333;
+}
+
+.name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3ED0D4;  
+}
+
+.name h1 {
+  margin-right: 20px;
+  text-shadow: 0px 3px 5px #333;
+}
+.name img{
+    border-radius: 40px;
+    box-shadow: 0px 3px 5px #333;
+}
+
+/* Projects Section */
+/* Ai Art Generators */
+.rectangle1 {
+  border: 1px solid #333;
+  position: absolute;
+  top: 20%;
+  left: 18%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3ED0D4;  
+  height: 500px;
+  width: 300px;
+  background-color: #ccc;
+  transform: rotate(-9deg);
+  background-image: url("Aiart.png");
+  background-size: cover;
+  border-radius: 45px;
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.rectangleCover1 {
+  position: absolute;
+  top: 20%;
+  left: 18%;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(202, 202, 202, 0);
+  height: 482px;
+  width: 282px;
+  background-color: rgba(202, 202, 202, 0.5);
+  transform: rotate(-9deg);
+  border-radius: 45px;
+  padding: 10px;
+}
+.rectangleCover1:hover{
+
+    background-color: rgba(202, 202, 202, 0);
+    color: rgb(255, 255, 255);
+    text-shadow:-1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+/* Github Pages */
+.rectangle2 {
+  border: 1px solid #333;
+  position: absolute;
+  top: 17%;
+  left: 39%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3ED0D4;  
+  height: 500px;
+  width: 300px;
+  background-color: #ccc;
+  transform: rotate(0deg);
+  background-image: url("githubproj.png");
+  background-size: cover;
+  border-radius: 45px;
+ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.rectangleCover2 {
+  position: absolute;
+  top: 17%;
+  left: 39%;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(202, 202, 202, 0);
+  height: 482px;
+  width: 282px;
+  background-color: rgba(202, 202, 202, 0.5);
+  transform: rotate(0deg);
+  border-radius: 45px;
+  padding: 10px;
+}
+.rectangleCover2:hover{
+    background-color: rgba(202, 202, 202, 0);
+    color: rgb(255, 255, 255);
+    text-shadow:-1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+/* Symphonic Quest */
+.rectangle3 {
+  border: 1px solid #333;
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3ED0D4;  
+  height: 500px;
+  width: 300px;
+  background-color: #ccc;
+  transform: rotate(9deg);
+  background-image: url("Symphoinc\ Quest.png");
+  background-size: cover;
+  border-radius: 45px;
+ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.rectangleCover3 {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(202, 202, 202, 0);
+  height: 482px;
+  width: 282px;
+  background-color: rgba(202, 202, 202, 0.5);
+  transform: rotate(9deg);
+  border-radius: 45px;
+  padding: 10px;
+}
+.rectangleCover3:hover{
+    background-color: rgba(202, 202, 202, 0);
+    color: rgb(255, 255, 255);
+    text-shadow:-1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
