@@ -562,6 +562,20 @@ background-color: #333;
     border-radius: 40px;
     box-shadow: 0px 3px 5px #333;
 }
+/* Center content within the resume div */
+.resume {
+    text-align: center; /* Centers inline elements like images */
+    padding: 20px;
+}
+
+.resume img {
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    max-width: 100%; /* Ensure it's responsive and doesn't overflow its container */
+    height: auto; /* Maintain aspect ratio */
+  
+}
+
 
 /* Projects Section */
 /* Ai Art Generators */
