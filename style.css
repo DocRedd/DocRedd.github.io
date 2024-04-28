@@ -232,27 +232,25 @@ body {
 /* BUTTON 1 */
 .hover-squareA {
   position: absolute;
-  left: 25%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  background-color: #959595;
+  background-color: #D74069;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
   opacity: 1;
   border: 1px solid #333;
-  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out; /* Add a transition property for the left property */
+  transition: opacity 3s ease-in-out, left 1s ease-in-out; 
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
-.hover-squareA:hover {
-  opacity: 1;
-  left: calc(25% - 150px); /* Decrease the left value on hover to move the square to the left */
-}
+
 
 .link-squareA {
+
   border: 1px solid #333;
   font-size: 24px;
   color: #fff;
@@ -267,14 +265,13 @@ body {
   background-color: #35AC80;
 }
 .square-containerA {
-position: absolute;
-top: 50%;
-left: 25%;
-transform: translate(-50%, -50%);
-width: 200px;
-height: 200px;
-background-color: #333;
-/* cursor: pointer; */
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: #333;  
 }
 
 .square-linkA {
@@ -332,20 +329,17 @@ background-color: #333;
   transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  background-color: #959595;
+  background-color: #35AC80;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
   opacity: 1;
   border: 1px solid #333;
-  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out; /* Add a transition property for the left property */
+  transition: opacity 3s ease-in-out, left 1s ease-in-out; 
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
-.hover-squareB:hover {
-  opacity: 1;
-  left: calc(50% - 150px); /* Decrease the left value on hover to move the square to the left */
-}
+
 
 .link-squareB {
   border: 1px solid #333;
@@ -421,25 +415,22 @@ background-color: #333;
 /* BUTTON 3 */
 .hover-squareC {
   position: absolute;
-  left: 75%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  background-color: #959595;
+  background-color: #3ED0D4;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
   opacity: 1;
   border: 1px solid #333;
-  transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out; /* Add a transition property for the left property */
+  transition: opacity 3s ease-in-out, left 1s ease-in-out; 
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
-.hover-squareC:hover {
-  opacity: 1;
-  left: calc(75% - 150px); /* Decrease the left value on hover to move the square to the left */
-}
+
 
 .link-squareC {
   border: 3px solid #333;
@@ -612,17 +603,19 @@ background-color: #333;
   transform: rotate(-9deg);
   border-radius: 45px;
   padding: 10px;
+  transition: background-color 0.5s ease;
 }
 .rectangleCover1:hover{
 
     background-color: rgba(202, 202, 202, 0);
     color: rgb(255, 255, 255);
+    text-align: center;
     text-shadow:-1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
 }
-/* Github Pages */
+/* Symphonic Pages */
 .rectangle2 {
   border: 1px solid #333;
   position: absolute;
@@ -637,7 +630,7 @@ background-color: #333;
   width: 300px;
   background-color: #ccc;
   transform: rotate(0deg);
-  background-image: url("githubproj.png");
+  background-image: url("Forms.png");
   background-size: cover;
   border-radius: 45px;
  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -656,10 +649,12 @@ background-color: #333;
   transform: rotate(0deg);
   border-radius: 45px;
   padding: 10px;
+  transition: background-color 0.5s ease; 
 }
 .rectangleCover2:hover{
     background-color: rgba(202, 202, 202, 0);
     color: rgb(255, 255, 255);
+    text-align: center;
     text-shadow:-1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
@@ -696,16 +691,20 @@ background-color: #333;
   color: rgba(202, 202, 202, 0);
   height: 482px;
   width: 282px;
-  background-color: rgba(202, 202, 202, 0.5);
+  background-color: rgba(202, 202, 202, 0.5); /* Semi-transparent */
   transform: rotate(9deg);
   border-radius: 45px;
   padding: 10px;
+  transition: background-color 0.5s ease; 
 }
-.rectangleCover3:hover{
+
+.rectangleCover3:hover {
     background-color: rgba(202, 202, 202, 0);
     color: rgb(255, 255, 255);
+    text-align: center;
     text-shadow:-1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+

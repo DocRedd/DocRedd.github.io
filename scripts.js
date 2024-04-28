@@ -31,7 +31,7 @@ function createSquares() {
       square.style.width = actualWidth + 'px';
       square.style.height = actualHeight + 'px';
       square.style.animationDelay = (i + j) * 0.05 + 's';
-
+      
       // Set the hover color with a delay
       setTimeout(function () {
         var randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -53,14 +53,16 @@ window.addEventListener('load', function () {
 });
 
 square.addEventListener('mouseover', function () {
+
     var delayColor = this.dataset.hoverColor;
+
     setTimeout(function () {
         square.style.backgroundColor = delayColor;
     }, 300);
 });
 
 square.addEventListener('mouseout', function () {
-    square.style.backgroundColor = "#959595";
+    square.style.backgroundColor = "#9595100";
 });
 
 window.addEventListener('resize', function () {
@@ -103,113 +105,145 @@ const squareLink = document.querySelector('.square-linkA');
 const hoverSquare = document.querySelector('.hover-squareA');
 const linkSquare = document.querySelector('.link-squareA');
 
-hoverSquare.addEventListener('mouseover', function () {
-  this.style.left = '-50px';
-});
+// linkSquare.addEventListener('mouseover', function () {
+//   this.style.left = '50px';
+// });
 
-hoverSquare.addEventListener('mouseout', function () {
-  this.style.left = '50%';
-});
+// hoverSquare.addEventListener('mouseout', function () {
 
-linkSquare.addEventListener('click', function (e) {
-  e.preventDefault();
-  alert('You clicked the link!');
-});
+//   this.style.left = '50%';
+// });
 
-
-
-let delayTime = 5000; // Change this value to adjust the delay time
-
-let timer;// Declare a variable to hold the timer ID
-
-hoverSquare.addEventListener('mouseover', function () {
-  clearTimeout(timer); // Clear any previous timers
-  this.style.left = '-50px';
-});
-
-hoverSquare.addEventListener('mouseout', function () {
-  timer = setTimeout(() => {
-    this.style.left = '50%';
-  }, delayTime); // Start a new timer with the delay time
-});
-
-linkSquare.addEventListener('mouseover', function () {
-  clearTimeout(timer); // Clear any previous timers
-  hoverSquare.style.left = '-100%';
-});
-
-linkSquare.addEventListener('mouseout', function () {
-  timer = setTimeout(() => {
-    hoverSquare.style.left = '100%';
-  }, delayTime); // Start a new timer with the delay time
-});
-
-
-function moveHoverSquare() {
-  hoverSquare.style.left = '-100%';
-}
-
-function startTimer() {
-  clearInterval(timer);
-  timer = setInterval(moveHoverSquare, 10000);
-}
-
-function resetTimer() {
-  clearInterval(timer);
-  timer = setInterval(moveHoverSquare, 10000);
-}
-
-hoverSquare.addEventListener('mouseover', function () {
-  this.style.left = '-50px';
-  resetTimer();
-});
-
-hoverSquare.addEventListener('mouseout', function () {
-  this.style.left = '50%';
-  startTimer();
-});
-
-linkSquare.addEventListener('click', function (e) {
-  e.preventDefault();
-  alert('You clicked the link!');
-});
-
-linkSquare.addEventListener('mouseover', function () {
-  moveHoverSquare();
-  resetTimer();
-});
-
-linkSquare.addEventListener('mouseout', function () {
-  startTimer();
-});
-
-startTimer();
-
-linkSquare.addEventListener('mouseenter', function () {
-  hoverSquare.style.left = '-100%';
-});
-
-linkSquare.addEventListener('mouseleave', function (e) {
-  setTimeout(function () {
-    if (!hoverSquare.matches(':hover')) {
-      hoverSquare.style.left = '100%';
-    }
-  }, 100);
-});
-
-hoverSquare.addEventListener('mouseenter', function () {
-  hoverSquare.style.left = '-50px';
-});
-
-hoverSquare.addEventListener('mouseleave', function (e) {
-  setTimeout(function () {
-    if (!linkSquare.matches(':hover')) {
-      hoverSquare.style.left = '100%';
-    }
-  }, 100);
-});
+// linkSquare.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   alert('You clicked the link!');
+// });
 
 
 
+// let delayTime = 5000; // Change this value to adjust the delay time
 
-// Projects section
+// let timer;// Declare a variable to hold the timer ID
+
+// hoverSquare.addEventListener('mouseover', function () {
+//   clearTimeout(timer); // Clear any previous timers
+//   this.style.left = '-50px';
+// });
+
+// hoverSquare.addEventListener('mouseout', function () {
+//   timer = setTimeout(() => {
+//     this.style.left = '50%';
+//   }, delayTime); // Start a new timer with the delay time
+// });
+
+// linkSquare.addEventListener('mouseover', function () {
+//   clearTimeout(timer); // Clear any previous timers
+//   hoverSquare.style.left = '-100%';
+// });
+
+// linkSquare.addEventListener('mouseout', function () {
+//   timer = setTimeout(() => {
+//     hoverSquare.style.left = '100%';
+//   }, delayTime); // Start a new timer with the delay time
+// });
+
+
+// function moveHoverSquare() {
+//   hoverSquare.style.left = '-100%';
+// }
+
+// function startTimer() {
+//   clearInterval(timer);
+//   timer = setInterval(moveHoverSquare, 10000);
+// }
+
+// function resetTimer() {
+//   clearInterval(timer);
+//   timer = setInterval(moveHoverSquare, 10000);
+// }
+
+// hoverSquare.addEventListener('mouseover', function () {
+//   this.style.left = '-50px';
+//   resetTimer();
+// });
+
+// hoverSquare.addEventListener('mouseout', function () {
+//   this.style.left = '50%';
+//   startTimer();
+// });
+
+// linkSquare.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   alert('You clicked the link!');
+// });
+
+// linkSquare.addEventListener('mouseover', function () {
+//   moveHoverSquare();
+//   resetTimer();
+// });
+
+// linkSquare.addEventListener('mouseout', function () {
+//   startTimer();
+// });
+
+// startTimer();
+
+// linkSquare.addEventListener('mouseenter', function () {
+//   hoverSquare.style.left = '-100%';
+// });
+
+// linkSquare.addEventListener('mouseleave', function (e) {
+//   setTimeout(function () {
+//     if (!hoverSquare.matches(':hover')) {
+//       hoverSquare.style.left = '100%';
+//     }
+//   }, 100);
+// });
+
+// hoverSquare.addEventListener('mouseenter', function () {
+//   hoverSquare.style.left = '-50px';
+// });
+
+// hoverSquare.addEventListener('mouseleave', function (e) {
+//   setTimeout(function () {
+//     if (!linkSquare.matches(':hover')) {
+//       hoverSquare.style.left = '100%';
+//     }
+//   }, 100);
+// });
+
+
+
+
+// const hoverSquareA = document.querySelector('.hover-squareA');
+// let hoverTimer;
+// let isHovering = false;
+
+// hoverSquareA.addEventListener('mouseover', function () {
+//   clearTimeout(hoverTimer); // Clear any timeout set previously
+//   isHovering = true;
+//   this.style.opacity = '1'; // Set opacity to full on hover
+//   this.style.left = 'calc(25% - 150px)'; // Move to hover position
+//   this.style.pointerEvents = 'auto'; // Ensure the element can be interacted with during hover
+// });
+
+// hoverSquareA.addEventListener('mouseout', function () {
+//   isHovering = false;
+//   this.style.pointerEvents = 'none'; // Disable mouse interactions during transition
+//   // Start a timeout only when mouse leaves the element
+//   hoverTimer = setTimeout(() => {
+//     if (!isHovering) { // Check if the mouse is still not hovering
+//       this.style.opacity = '1'; // Reset opacity after delay
+//       this.style.left = '50%'; // Move back to original position after delay
+//       this.style.pointerEvents = 'auto'; // Re-enable mouse interactions after transition completes
+//     } else {
+//       this.style.pointerEvents = 'auto'; // Re-enable interactions if mouse re-enters before transition
+//     }
+//   }, 1); // Delay reset by 5 seconds
+// });
+
+// hoverSquareA.addEventListener('mouseenter', function () {
+//   clearTimeout(hoverTimer); // Clear any pending timeouts if re-entered
+//   isHovering = true;
+//   this.style.pointerEvents = 'auto'; // Ensure the element can be interacted with
+// });
