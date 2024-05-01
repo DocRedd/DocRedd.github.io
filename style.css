@@ -554,19 +554,24 @@ background-color: #333;
     box-shadow: 0px 3px 5px #333;
 }
 /* Center content within the resume div */
-.resume {
-    text-align: center; /* Centers inline elements like images */
-    padding: 20px;
-}
-
 .resume img {
-    display: block;
-    margin: 0 auto; /* Center the image horizontally */
-    max-width: 100%; /* Ensure it's responsive and doesn't overflow its container */
-    height: auto; /* Maintain aspect ratio */
-  
-}
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 2%;  
+  width: auto;
+  height: 80%;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
+}
 
 /* Projects Section */
 /* Ai Art Generators */

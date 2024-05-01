@@ -227,3 +227,35 @@ document.addEventListener("DOMContentLoaded", function() {
     boundary = boundsContainer.getBoundingClientRect();
   });
 });
+document.addEventListener("DOMContentLoaded", function() {
+  updateMovableSquare('movableSquareA', 'boundsContainerA');
+  updateMovableSquare('movableSquareB', 'boundsContainerB');
+  updateMovableSquare('movableSquareC', 'boundsContainerC');
+});
+
+function updateMovableSquare(movableSquareId, boundsContainerId) {
+  const movableSquare = document.getElementById(movableSquareId);
+  const boundsContainer = document.getElementById(boundsContainerId);
+
+  function handleMouseMove(event) {
+    let boundary = boundsContainer.getBoundingClientRect(); // Get the bounds on each mouse move
+    // Check if the mouse is within the container's bounds
+    if (event.clientX >= boundary.left && event.clientX <= boundary.right &&
+        event.clientY >= boundary.top && event.clientY <= boundary.bottom) {
+      // Mouse is inside the container, apply desired styles
+      movableSquare.style.opacity = "1";
+      movableSquare.style.left = "-50%";  // Move to the right within the container
+    } else {
+      // Mouse is outside the container, revert styles
+      movableSquare.style.opacity = "1";
+      movableSquare.style.left = "50%";  // Center it back
+    }
+  }
+
+  boundsContainer.addEventListener("mousemove", handleMouseMove);
+
+  // The resize event listener should be set on window to handle browser resizing
+  window.addEventListener("resize", function() {
+    handleMouseMove({clientX: 0, clientY: 0});  // Trigger mouse move to reset styles if needed
+  });
+}
