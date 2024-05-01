@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Landing Page</title>
+    <title>Contact Me</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
@@ -9,6 +9,65 @@
     <div class="container">        
         <script src="scripts.js"></script>
     </div>
+	<form class="contact-form" id="form">
+		<h1>Contact Me Here!</h5>
+		<div class="field">
+			<label for="from_name">Your Name:</label>
+			<input type="text" name="from_name" id="from_name">
+		</div>
+		<div class="field">
+			<label for="reply_to">Your Email:</label>
+			<input type="text" name="reply_to" id="reply_to">
+		</div>
+		<div class="field">
+			<label for="to_name" id="to_name">To: Benjamin McNeilly</label>			
+		</div>
+		<div class="field">
+			<label for="message">Your Message:</label>
+			<textarea class="message" name="message" id="message" rows="4" cols="50"></textarea>
+		</div>
+
+
+		<input class="btn" type="submit" id="button" value="Send Email" >
+	</form>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init('cY-9V2GFhTqAmslU-'); 
+
+            const btn = document.getElementById('button');
+            const messageField = document.getElementById('message'); // Get the textarea element
+			const formElements = document.getElementById('form').elements; // Get all form elements
+
+            document.getElementById('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...'; 
+				btn.disabled = true;
+                const serviceID = 'service_fk4g1df';
+                const templateID = 'template_3uz0piq';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Send Email';
+						messageField.style.color = 'lightgray';
+						btn.disabled = true;
+						btn.style.backgroundColor = 'lightgray';
+                    for (let i = 0; i < formElements.length; i++) {
+                        formElements[i].disabled = true;
+                    }
+                        alert('Sent!');
+                    }, (err) => {
+                        btn.value = 'Send Email';
+						btn.disabled = false;
+                        //alert(JSON.stringify(err));
+                    });
+            });
+        })();
+    </script>
+
+
+
 	<nav class="button-bar">
 		<a class="btn" href="contactMe.html">Connect</a>
 		<a class="btn" href="index.html">Home</a>
